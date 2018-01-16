@@ -3,4 +3,8 @@ Description=Check if User has been Idle
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/sh -c '/usr/bin/idlelocker.sh'
+Environment=DISPLAY=:0
+ExecStart=/bin/bash -c '/usr/local/bin/idlelock/idlelock.sh'
+
+[Install]
+WantedBy=default.target
