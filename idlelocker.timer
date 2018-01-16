@@ -1,0 +1,5 @@
+[Unit]
+Description=Run idlelocker.service every 10 seconds
+
+[Timer]
+OnCalendar=*:*:0/10
