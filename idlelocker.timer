@@ -3,3 +3,6 @@ Description=Run idlelock.service every 1 minute
 
 [Timer]
 OnCalendar=*:*:00
+
+[Install]
+WantedBy=default.target
