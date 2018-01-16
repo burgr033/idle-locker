@@ -2,16 +2,13 @@
 
 if pgrep "i3lock" > /dev/null
 then
-#echo "debug exit" | systemd-cat
-    exit
+    exit 0
 else
-    idleAfter=600000
-    idleTimeMillis=$(/opt/idlelock/getIdle)
-#    echo $idleTimeMillis
+    idleAfter=600000 #edit this line for custom idle time
+    idleTimeMillis=$($(dirname $0)/getIdle)
     if [[ $idleTimeMillis -gt $idleAfter ]]
         then
-            echo debug log | systemd-cat
             DISPLAY=:0
-            /home/cigh/.config/i3/lock
+            i3lock #edit this line for your i3lock script
     fi
 fi
